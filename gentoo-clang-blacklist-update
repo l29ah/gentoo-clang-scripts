@@ -1,0 +1,11 @@
+#!/bin/sh
+blacklist_path=/etc/portage/gentoo-clang/
+cd "$blacklist_path"
+case $PACKAGE_MANAGER in
+	portage)
+		echo not implemented;;
+	paludis)
+		git pull;;
+	*)
+		echo not implemented;;
+esac

@@ -2,6 +2,6 @@ This is a pack of scripts to allow blacklisting clang-failing packages on Gentoo
 
 The simplest way to install is to hit:
 
-	emerge gentoo-clang::booboo
+	emerge app-portage/gentoo-clang::booboo
 
 It will create a file in /etc/cron.daily that will sync the repo which resides in /etc/portage/gentoo-clang, and generate the configuration file for your $PACKAGE_MANAGER.

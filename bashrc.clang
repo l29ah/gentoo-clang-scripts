@@ -1,0 +1,10 @@
+#!/bin/sh
+blacklist_path=/etc/portage/gentoo-clang/blacklist
+atom="$CATEGORY/$PN"
+if grep -q "$atom" "$blacklist_path"; then
+	export CC=gcc
+	export CXX=g++
+else
+	export CC=clang
+	export CXX=clang++
+fi
