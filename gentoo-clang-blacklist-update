@@ -5,7 +5,7 @@ case $PACKAGE_MANAGER in
 	portage)
 		echo not implemented;;
 	paludis)
-		git pull;;
+		git pull > /dev/null;;
 	*)
 		echo not implemented;;
 esac
