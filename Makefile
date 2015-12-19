@@ -8,4 +8,4 @@ install:
 		install bashrc.clang ${DESTDIR}/etc/paludis/; \
 	fi
 	mkdir -p ${DESTDIR}/etc/cron.daily
-	install gentoo-clang-blacklist-update ${DESTDIR}/etc/cron.daily/
+	install -m 0755 gentoo-clang-blacklist-update ${DESTDIR}/etc/cron.daily/
