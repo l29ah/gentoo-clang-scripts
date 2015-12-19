@@ -1,5 +1,4 @@
 #!/bin/sh
-set -x
 repo_uri="https://github.com/l29ah/gentoo-clang-db"
 repo_path=/etc/portage/gentoo-clang/
 
