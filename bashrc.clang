@@ -6,4 +6,5 @@ if ! sed -n "s/#.*//; s/\\s*//g; /^$/d; /^$CATEGORY\\/$PN$/ q 1" "$blacklist_pat
 else
 	export CC=clang
 	export CXX=clang++
+	export CFLAGS="$CFLAGS -fheinous-gnu-extensions"
 fi
