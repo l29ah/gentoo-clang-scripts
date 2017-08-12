@@ -1,8 +1,9 @@
 #!/bin/sh
 blacklist_path=/etc/portage/gentoo-clang/blacklist
 if ! sed -n "s/#.*//; s/\\s*//g; /^$/d; /^$CATEGORY\\/$PN$/ q 1" "$blacklist_path" ; then
-	export CC=''
-	export CXX=''
+	#export CC=''
+	#export CXX=''
+	true
 else
 	export CC=clang
 	export CXX=clang++
