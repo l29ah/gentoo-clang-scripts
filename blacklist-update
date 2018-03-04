@@ -1,0 +1,26 @@
+#!/bin/sh
+
+PATH_TO_DB=/var/tmp/
+REPO_NAME=gentoo-clang-db
+ENV_NAME=gcc
+PATH_TO_ATOMS=/etc/portage/package.env/gcc
+REPO_GIT=https://github.com/l29ah/gentoo-clang-db
+
+set -e
+
+[ -d ${PATH_TO_DB} ] || mkdir -p ${PATH_TO_DB}
+
+if [ -d ${PATH_TO_DB}/${REPO_NAME} ]; then
+    cd ${PATH_TO_DB}/${REPO_NAME}
+    git pull
+else
+    cd ${PATH_TO_DB}
+    git clone ${REPO_GIT}
+fi
+
+if [ -e ${PATH_TO_DB}/${REPO_NAME}/blacklist ]; then
+    cat ${PATH_TO_DB}/${REPO_NAME}/blacklist | sed -ne "s/\$/ ${ENV_NAME}/p" > ${PATH_TO_ATOMS}
+else
+    echo "${PATH_TO_DB}/${REPO_NAME}/blacklist does not exist!"
+    exit 1
+fi
